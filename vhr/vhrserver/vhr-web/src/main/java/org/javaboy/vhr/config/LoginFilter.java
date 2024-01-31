@@ -28,6 +28,7 @@ import java.util.Map;
 public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     @Autowired
     SessionRegistry sessionRegistry;
+
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         if (!request.getMethod().equals("POST")) {
@@ -40,7 +41,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             try {
                 loginData = new ObjectMapper().readValue(request.getInputStream(), Map.class);
             } catch (IOException e) {
-            }finally {
+            } finally {
                 String code = loginData.get("code");
                 checkCode(response, code, verify_code);
             }
@@ -69,7 +70,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     public void checkCode(HttpServletResponse resp, String code, String verify_code) {
         if (code == null || verify_code == null || "".equals(code) || !verify_code.toLowerCase().equals(code.toLowerCase())) {
             //验证码不正确
-            throw new AuthenticationServiceException("验证码不正确");
+//            throw new AuthenticationServiceException("验证码不正确");
         }
     }
 }
