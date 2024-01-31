@@ -53,7 +53,10 @@ export const postRequest = (url, params) => {
     return axios({
         method: 'post',
         url: `${base}${url}`,
-        data: params
+        data: params,
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
 }
 export const putRequest = (url, params) => {

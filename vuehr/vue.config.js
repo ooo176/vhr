@@ -4,6 +4,11 @@ proxyObj['/ws'] = {
     ws: true,
     target: "ws://localhost:8081"
 };
+proxyObj['/data_check_service'] = {
+    target: 'http://39.101.172.168:8081',
+    changeOrigin: true,
+    pathRewrite: {"^/data_check_service": ""}
+}
 proxyObj['/'] = {
     ws: false,
     target: 'http://localhost:8081',
@@ -12,6 +17,8 @@ proxyObj['/'] = {
         '^/': ''
     }
 }
+
+
 module.exports = {
     devServer: {
         host: 'localhost',

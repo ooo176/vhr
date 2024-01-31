@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "vhr.host",
+      "type": "java.lang.String",
+      "description": "统一配置后端地址."
+    }
+  ]
+}
