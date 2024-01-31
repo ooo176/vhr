@@ -1,11 +1,16 @@
 vhr:
   host: 127.0.0.1
+  mysql:
+    password: 111
+  redis:
+    password: 111
+
 
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: qq1234
+    password: ${vhr.mysql.password}
     url: jdbc:mysql://${vhr.host}:3306/vhr?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
   rabbitmq:
     username: guest
@@ -17,7 +22,7 @@ spring:
     host: ${vhr.host}
     database: 0
     port: 6379
-    password: root#123456
+    password: ${vhr.redis.password}
   cache:
     cache-names: menus_cache
 server:

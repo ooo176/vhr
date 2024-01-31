@@ -4,6 +4,16 @@
       "name": "vhr.host",
       "type": "java.lang.String",
       "description": "统一配置后端地址."
+    },
+    {
+      "name": "vhr.mysql.password",
+      "type": "java.lang.String",
+      "description": "Description for vhr.mysql.password."
+    },
+    {
+      "name": "vhr.redis.password",
+      "type": "java.lang.String",
+      "description": "Description for vhr.redis.password."
     }
   ]
 }
