@@ -46,7 +46,7 @@
             },
             listAllSql() {
                 this.loading = true;
-                this.getRequest('/data_check_serviceweibo/query', '')
+                this.getRequest('/data_check_service/weibo/query', '')
                     .then(resp => {
                         if (resp) {
                             this.loading = false;

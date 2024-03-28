@@ -11,7 +11,7 @@ proxyObj['/data_check_service'] = {
 }
 proxyObj['/'] = {
     ws: false,
-    target: 'http://localhost:8081',
+    target: 'http://localhost:8082',
     changeOrigin: true,
     pathRewrite: {
         '^/': ''
